@@ -28,8 +28,10 @@ class AstroServiceTest {
         ResponseEntity<AstroResponse> response = service.getAstroDataEntity();
         System.out.println(response);
         System.out.println(response.getStatusCode());
+        response.getHeaders().entrySet().forEach(System.out::println);
         System.out.println(response.getHeaders().get("content-type"));
         System.out.println(response.getBody().getClass());
+        response.getBody().getPeople().forEach(System.out::println);
     }
 
 }
